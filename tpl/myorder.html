@@ -1,0 +1,18 @@
+<div ng-include=" 'tpl/header.html' "></div>
+  <div class="container">
+    <input ng-model="phone" class="form-control" type="phone" placeholder="输入你订餐的电话号码...">
+    <button ng-click="sub()" class="btn btn-inline btn-success">查找</button>
+    <div class="row">
+      <div class="col-xs-3">编号</div>
+      <div class="col-xs-3">菜品</div>
+      <div class="col-xs-3">下单时间</div>
+      <div class="col-xs-3">联系人</div>
+    </div>
+    <div ng-repeat="myorder in orderList" class="row">
+      <div class="col-xs-3">{{myorder.oid}}</div>
+      <div class="col-xs-3"><img ng-src="img/{{myorder.img_sm}}"/></div>
+      <div class="col-xs-3">{{myorder.order_time | date:'yyyy年MM月dd日'}}</div>
+      <div class="col-xs-3">{{myorder.user_name}}</div>
+    </div>
+  </div>
+<div ng-include=" 'tpl/footer.html' "></div>
